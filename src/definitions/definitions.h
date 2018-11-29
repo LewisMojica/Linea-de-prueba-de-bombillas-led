@@ -16,5 +16,14 @@
 
 
 ///// OBSTACLE SENSOR INPUTS PINS//////
-    #define obstacle_sensor_lamp0 13
-    #define obstacle_sensor_lamp1 13
+    #define obstacle_sensor_lamp0 14
+    #define obstacle_sensor_lamp1 15
+
+
+////////// LIMIT SWITHCES ///////////
+    //TOP LIMIT
+    #define limit_switch_x 16
+    #define limit_switch_y 17
+    //BOTTON LIMIT
+    #define limit_switch_x_botton 16
+    #define limit_switch_y_botton 17

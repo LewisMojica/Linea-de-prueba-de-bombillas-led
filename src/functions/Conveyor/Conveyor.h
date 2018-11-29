@@ -3,4 +3,7 @@
 #include "ObstacleSensor.h"
 #include "Purge.h"
 
+
+extern A4988 motor_conveyor;
+
 void nextItem();
