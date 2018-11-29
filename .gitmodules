@@ -1,0 +1,6 @@
+[submodule "lib/StepperDriver"]
+	path = lib/StepperDriver
+	url = https://github.com/laurb9/StepperDriver.git
+[submodule "lib/ArduinoUtils"]
+	path = lib/ArduinoUtils
+	url = https://github.com/LewisMojica/ArduinoUtils.git
