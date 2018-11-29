@@ -13,3 +13,8 @@
         #define pick_and_place_Y_steps 200
         #define pick_and_place_Y_pin_DIR 12
         #define pick_and_place_Y_pin_STEP 13
+
+
+///// OBSTACLE SENSOR INPUTS PINS//////
+    #define obstacle_sensor_lamp0 13
+    #define obstacle_sensor_lamp1 13
