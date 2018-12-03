@@ -1,14 +1,14 @@
 //////// STEPPER MOTORS CONFIG ////////
     // CONVEYOR
         #define conveyor_steps 200
-        #define conveyor_pin_DIR 8
-        #define conveyor_pin_STEP 9
+        #define conveyor_pin_DIR 48
+        #define conveyor_pin_STEP 14
 
     // PICK AND PLACE
         // X AXIS
         #define pick_and_place_X_steps 200
-        #define pick_and_place_X_pin_DIR 10
-        #define pick_and_place_X_pin_STEP 11
+        #define pick_and_place_X_pin_DIR 13
+        #define pick_and_place_X_pin_STEP 8
         // Y AXIS
         #define pick_and_place_Y_steps 200
         #define pick_and_place_Y_pin_DIR 12
@@ -22,8 +22,9 @@
 
 ////////// LIMIT SWITHCES ///////////
     //TOP LIMIT
-    #define limit_switch_x 16
+    #define limit_switch_x 12
     #define limit_switch_y 17
     //BOTTON LIMIT
     #define limit_switch_x_botton 16
     #define limit_switch_y_botton 17
+    
