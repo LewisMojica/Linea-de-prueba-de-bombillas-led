@@ -7,6 +7,9 @@ void discardLamp(byte lamp){
 }
 
 byte lampState(){
+    
+    digitalWrite(13,LOW);
+    motor_X_pick.move(500);
     pushDown();
     /* falta verificar la corriente y la luminosidad*/
     return 0b11;
