@@ -6,13 +6,13 @@
 
     // PICK AND PLACE
         // X AXIS
-        #define pick_and_place_X_steps 200
-        #define pick_and_place_X_pin_DIR 13
-        #define pick_and_place_X_pin_STEP 8
-        #define pick_and_place_X_pin_ENABLE 9
+        #define pick_and_place_X_steps (200 * 16)
+        #define pick_and_place_X_pin_DIR 2
+        #define pick_and_place_X_pin_STEP 3
+        #define pick_and_place_X_pin_ENABLE 4
         #define pick_and_place_X_standard_RPM 250
         #define pick_and_place_X_calibration_RPM 100
-        #define pick_and_place_X_calibration_steps 3200
+        #define pick_and_place_X_calibration_steps (3200 * 16)
         // Y AXIS
         #define pick_and_place_Y_steps 200
         #define pick_and_place_Y_pin_DIR 12
