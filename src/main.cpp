@@ -23,27 +23,20 @@ A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_
 
 void setup() {
   welcomeScreen();
+
   pinMode(limit_switch_x, INPUT_PULLUP);
   pinMode(limit_switch_y,INPUT_PULLUP);
-  motor_X_pick.begin(180);
-  Serial.begin(19200);
+  pinMode(obstacle_sensor_lamp0, INPUT);
+  pinMode(obstacle_sensor_lamp1, INPUT);
+  pinMode(obstacle_sensor_end, INPUT);
+
+  motor_X_pick.begin(1);
+  motor_Y_pick.begin(1);
+  
   goToHome();
   
 }
 
 void loop() {
   
-  static bool go;
-if(Serial.available() > 0){
-  Serial.read();
-  go = !go;
-  Serial.println(go);
-}
-  if(go){
-    motor_X_pick.move(500);
-    delay(200);
-    motor_X_pick.move(-500);
-    delay(200);
-  }
-
 }
