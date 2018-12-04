@@ -2,5 +2,6 @@
 #include <A4988.h>
 
 
-void pushDown();
+void pushLamp(bool);
 void goToHome();
+bool isLampPushed();

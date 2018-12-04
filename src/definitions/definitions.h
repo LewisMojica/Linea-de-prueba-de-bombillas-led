@@ -13,13 +13,16 @@
         #define pick_and_place_X_standard_RPM 250
         #define pick_and_place_X_calibration_RPM 100
         #define pick_and_place_X_calibration_steps (3200 * 16)
+        #define pick_and_place_X_test_pos 30
         // Y AXIS
         #define pick_and_place_Y_steps 200
         #define pick_and_place_Y_pin_DIR 12
         #define pick_and_place_Y_pin_STEP 13
         #define pick_and_place_Y_pin_ENABLE 30
+        #define pick_and_place_Y_standard_RPM 250
         #define pick_and_place_Y_calibration_RPM 100
         #define pick_and_place_Y_calibration_steps 50
+        #define pick_and_place_Y_test_pos 30
 
 
 ///// OBSTACLE SENSOR INPUTS PINS//////
