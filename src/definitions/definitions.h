@@ -31,7 +31,5 @@
     //TOP LIMIT
     #define limit_switch_x 12
     #define limit_switch_y 17
-    //BOTTON LIMIT
-    #define limit_switch_x_botton 16
-    #define limit_switch_y_botton 17
+    
     
