@@ -15,21 +15,24 @@
 A4988 motor_conveyor(conveyor_steps,9,conveyor_pin_STEP);
 
 //pick and place
-A4988 motor_X_pick(pick_and_place_X_steps  ,  pick_and_place_X_pin_DIR ,  pick_and_place_X_pin_STEP , pick_and_place_X_pin_ENABLE);
+A4988 motor_X_pick(pick_and_place_X_steps  ,  pick_and_place_X_pin_DIR ,  pick_and_place_X_pin_STEP);
 
 //pick and place
-A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_and_place_Y_pin_STEP , pick_and_place_X_pin_ENABLE);
+A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_and_place_Y_pin_STEP);
 
 
 void setup() {
   welcomeScreen();
   pinMode(limit_switch_x, INPUT_PULLUP);
+  pinMode(limit_switch_y,INPUT_PULLUP);
   motor_X_pick.begin(180);
   Serial.begin(19200);
   goToHome();
+  
 }
 
 void loop() {
+  
   static bool go;
 if(Serial.available() > 0){
   Serial.read();
@@ -42,4 +45,5 @@ if(Serial.available() > 0){
     motor_X_pick.move(-500);
     delay(200);
   }
+
 }
