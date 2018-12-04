@@ -10,7 +10,7 @@ byte lampState(){
     
     digitalWrite(13,LOW);
     motor_X_pick.move(500);
-    pushDown();
+    pushLamp(true);
     /* falta verificar la corriente y la luminosidad*/
     return 0b11;
     //return a byte indicating which lamps are ok
