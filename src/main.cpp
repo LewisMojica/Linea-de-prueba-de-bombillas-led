@@ -16,10 +16,10 @@ bool stopit = false;
 A4988 motor_conveyor(conveyor_steps,9,conveyor_pin_STEP);
 
 //pick and place
-A4988 motor_X_pick(pick_and_place_X_steps  ,  15  ,  pick_and_place_X_pin_STEP);
+A4988 motor_X_pick(pick_and_place_X_steps  ,  pick_and_place_X_pin_DIR ,  pick_and_place_X_pin_STEP , pick_and_place_X_pin_ENABLE);
 
 //pick and place
-A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_and_place_Y_pin_STEP);
+A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_and_place_Y_pin_STEP , pick_and_place_X_pin_ENABLE);
 
 CartesianPos pick_up_pos;
 
@@ -28,12 +28,12 @@ void stop();
 void setup() {
   pinMode(limit_switch_x, INPUT_PULLUP);
   motor_X_pick.begin(180);
-  pinMode(13, OUTPUT);
+  digitalWrite(13,LOW);
   Serial.begin(19200);
-  goToHome();
+  // goToHome();
 
-  lampState();
-
+  // lampState();
+motor_X_pick.move(-500);
 }
 
 void loop() {
@@ -43,11 +43,9 @@ if(Serial.available() > 0){
   Serial.println(go);
 }
   if(go){
-  digitalWrite(13, LOW);
-  motor_X_pick.move(2000);
-  delay(200);
-  digitalWrite(13, HIGH);
-    motor_X_pick.move(2000);
-  delay(200);
+    motor_X_pick.move(500);
+    delay(200);
+    motor_X_pick.move(-500);
+    delay(200);
   }
 }

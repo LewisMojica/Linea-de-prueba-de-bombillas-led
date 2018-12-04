@@ -12,9 +12,8 @@ extern bool stopit;
 void goToHome(){
 
     /* PRIMERO VA EL EJE Y*/
-    motor_X_pick.setRPM(100);
-    digitalWrite(pick_and_place_X_pin_DIR,HIGH);
-    motor_X_pick.move(3100);
+    motor_X_pick.setRPM(pick_and_place_X_calibration_RPM);
+    motor_X_pick.move(pick_and_place_X_calibration_steps);
     pinMode(9,OUTPUT);
     digitalWrite(9,LOW);
 
