@@ -1,9 +1,6 @@
 #include "Purge.h"
 
-byte lampState(){
-    
-    pushLamp();
-    
+byte lampState(){    
     return (digitalRead(lux_lamp_0) + (digitalRead(lux_lamp_1 * 2)));
     //return a byte indicating which lamps are ok
     // the state is indicates with the tow less signficative bit of the byte, 1 for good, 0 for bad
