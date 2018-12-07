@@ -38,6 +38,32 @@ void setup() {
 }
 
 void loop() {
-  nextItem();
-  moveToTrash(lampState());
+  String pos;
+  if(Serial.available() > 0){
+    if(Serial.peek() == 'x'){
+      Serial.read();
+      Serial.print("\n moToX >");
+      while(Serial.available() <= 0){
+        ;
+      }
+      while(Serial.available() > 0){
+        if(isDigit(Serial.peek()))
+          pos += Serial.read();
+      }
+      moveXTo(pos.toInt());
+    } 
+    else if(Serial.peek() == 'y'){
+      Serial.read();
+      Serial.print("\n moToY >");
+      while(Serial.available() <= 0){
+        ;
+      }
+      while(Serial.available() > 0){
+        if(isDigit(Serial.peek()))
+          pos += Serial.read();
+      }
+      moveYTo(pos.toInt());
+    }
+    Serial.println("exit");
+  }
 }
