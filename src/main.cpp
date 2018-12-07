@@ -36,7 +36,7 @@ void setup() {
   motor_X_pick.begin(50);
   motor_Y_pick.begin(50);
   goToHome();
-  goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_calibration_steps);
+  goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos);
 
   // delay(1000);
   // goTo(180 * 16,0);

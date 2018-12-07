@@ -19,6 +19,6 @@ void moveToTrash(byte in){
         digitalWrite(suction_lamp_0, bitRead(in, 0));
         digitalWrite(suction_lamp_1, bitRead(in, 0));
 
-        goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_calibration_steps );
+        goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos );
     }
 }

@@ -19,7 +19,7 @@
         #define pick_and_place_X_standard_RPM (200)
         #define pick_and_place_X_calibration_RPM 100
 
-        #define pick_and_place_X_calibration_steps (180 * pick_and_place_X_uStepping)
+        #define pick_and_place_X_normal_pos (180 * pick_and_place_X_uStepping)
         // #define pick_and_place_X_test_pos (180 * pick_and_place_X_uStepping)
 
         
@@ -37,7 +37,7 @@
         #define pick_and_place_Y_standard_RPM 200
         #define pick_and_place_Y_calibration_RPM 50
         
-        #define pick_and_place_Y_calibration_steps (920 * pick_and_place_Y_uStepping)
+        #define pick_and_place_Y_normal_pos (920 * pick_and_place_Y_uStepping)
         #define pick_and_place_Y_test_pos (180 * pick_and_place_Y_uStepping)
 
         #define secure_pos_y (150 * pick_and_place_X_uStepping)

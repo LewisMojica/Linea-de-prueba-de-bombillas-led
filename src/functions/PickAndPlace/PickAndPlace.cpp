@@ -30,7 +30,7 @@ void goToHome(){
 }
 
 void pushLamp(bool action){
-    goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_test_pos);
+    goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos);
 }
 
 
