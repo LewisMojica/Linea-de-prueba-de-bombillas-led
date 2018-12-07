@@ -14,12 +14,11 @@ void moveToTrash(byte in){
         digitalWrite(suction_lamp_0, bitRead(in, 0));
         digitalWrite(suction_lamp_1, bitRead(in, 1));
 
-        motor_Y_pick.move(pick_y_steps_to_trash);
-        motor_X_pick.move(-pick_x_steps_to_trash);
+        goTo(pick_x_steps_to_trash, pick_y_steps_to_trash );
 
         digitalWrite(suction_lamp_0, bitRead(in, 0));
         digitalWrite(suction_lamp_1, bitRead(in, 0));
 
-        motor_X_pick.move(pick_x_steps_to_trash);
+        goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_calibration_steps );
     }
 }

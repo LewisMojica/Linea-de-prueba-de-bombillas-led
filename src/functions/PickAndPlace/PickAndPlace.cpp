@@ -24,8 +24,8 @@ void goToHome(){
     motor_Y_pick.setRPM(pick_and_place_X_standard_RPM);
     motor_X_pick.setRPM(pick_and_place_Y_standard_RPM);
 
-    motor_X_pick.move(-pick_and_place_X_calibration_steps);
-    motor_Y_pick.move(-pick_and_place_Y_calibration_steps);
+    // motor_X_pick.move(-pick_and_place_X_calibration_steps);
+    // motor_Y_pick.move(-pick_and_place_Y_calibration_steps);
 
 }
 
@@ -39,22 +39,23 @@ void moveTo(unsigned long x, unsigned long y){
     moveYTo(y);
 }
 void moveXTo(unsigned long x){
-    motor_X_pick.move(x - pos_x);
+    motor_X_pick.move(-(x - pos_x));
     pos_x = x;
 }
 
 void moveYTo(unsigned long y){
-    motor_Y_pick.move(y - pos_y);
+    motor_Y_pick.move(-(y - pos_y));
     pos_y = y;
 }
 
 void goTo(unsigned long x, unsigned long y){
-    if(x > secure_pos_y){
+    if(y > secure_pos_y && x != pos_x){
         moveYTo(secure_pos_y);
         moveXTo(x);
         moveYTo(y);
     }
     else{
-        moveTo(x,y);
+        moveXTo(x);
+        moveYTo(y);
     }
 }

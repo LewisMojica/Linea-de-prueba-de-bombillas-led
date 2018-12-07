@@ -20,6 +20,7 @@ A4988 motor_X_pick(pick_and_place_X_steps  ,  pick_and_place_X_pin_DIR ,  pick_a
 //pick and place
 A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_and_place_Y_pin_STEP);
 
+extern unsigned long pos_x,pos_y;
 
 void setup() {
   welcomeScreen();
@@ -35,35 +36,27 @@ void setup() {
   motor_X_pick.begin(50);
   motor_Y_pick.begin(50);
   goToHome();
+  goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_calibration_steps);
+
+  // delay(1000);
+  // goTo(180 * 16,0);
+  // delay(1000);
+  // goTo(180 *16,pick_and_place_Y_test_pos);
+  // delay(1000);
+  // goTo(180 * 16, pick_and_place_Y_test_pos + 500);
+  // delay(1000);
+  // goTo(500 * 16, pick_and_place_Y_test_pos + 500);
+  // goTo(pick_x_steps_to_trash, 500 * 16);
+  // goTo(0, pos_y);
+
+  moveToTrash(2);
+
+  // goTo(250 * 16, pos_y);
+
+
+
 }
 
 void loop() {
-  String pos;
-  if(Serial.available() > 0){
-    if(Serial.peek() == 'x'){
-      Serial.read();
-      Serial.print("\n moToX >");
-      while(Serial.available() <= 0){
-        ;
-      }
-      while(Serial.available() > 0){
-        if(isDigit(Serial.peek()))
-          pos += Serial.read();
-      }
-      moveXTo(pos.toInt());
-    } 
-    else if(Serial.peek() == 'y'){
-      Serial.read();
-      Serial.print("\n moToY >");
-      while(Serial.available() <= 0){
-        ;
-      }
-      while(Serial.available() > 0){
-        if(isDigit(Serial.peek()))
-          pos += Serial.read();
-      }
-      moveYTo(pos.toInt());
-    }
-    Serial.println("exit");
-  }
+  
 }
