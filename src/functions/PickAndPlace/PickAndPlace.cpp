@@ -25,7 +25,7 @@ void goToHome(){
 
 }
 
-void pushLamp(bool action){
+void pushLamp(){
     goTo(pick_and_place_X_normal_pos, pick_and_place_Y_push_pos);
 }
 

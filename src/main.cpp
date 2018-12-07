@@ -38,7 +38,7 @@ void setup() {
   goToHome();
   goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos);
   delay(1000);
-  pushLamp(true);
+  pushLamp();
   delay(1000);
   moveToTrash(2);
 

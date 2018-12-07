@@ -4,7 +4,7 @@
 
 
 
-void pushLamp(bool);
+void pushLamp();
 void goToHome();
 bool isLampPushed();
 long tryLimit();

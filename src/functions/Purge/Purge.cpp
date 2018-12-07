@@ -2,7 +2,7 @@
 
 byte lampState(){
     
-    pushLamp(true);
+    pushLamp();
     
     return (digitalRead(lux_lamp_0) + (digitalRead(lux_lamp_1 * 2)));
     //return a byte indicating which lamps are ok
@@ -18,6 +18,7 @@ void moveToTrash(byte in){
 
         digitalWrite(suction_lamp_0, bitRead(in, 0));
         digitalWrite(suction_lamp_1, bitRead(in, 0));
+        delay(500);
 
         goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos );
     }
