@@ -1,22 +1,25 @@
 #include "Purge.h"
 
-void discardLamp(byte lamp){
-    if (lamp != 0){
-        moveToTrash(lamp);
-    }
-}
-
 byte lampState(){
     
-    digitalWrite(13,LOW);
-    motor_X_pick.move(500);
     pushLamp(true);
-    /* falta verificar la corriente y la luminosidad*/
-    return 0b11;
+    
+    return (digitalRead(lux_lamp_0) + (digitalRead(lux_lamp_1 * 2)));
     //return a byte indicating which lamps are ok
     // the state is indicates with the tow less signficative bit of the byte, 1 for good, 0 for bad
 }
 
-void moveToTrash(byte){
-    
+void moveToTrash(byte in){
+    if(in != 0){
+        digitalWrite(suction_lamp_0, bitRead(in, 0));
+        digitalWrite(suction_lamp_1, bitRead(in, 1));
+
+        motor_Y_pick.move(pick_y_steps_to_trash);
+        motor_X_pick.move(-pick_x_steps_to_trash);
+
+        digitalWrite(suction_lamp_0, bitRead(in, 0));
+        digitalWrite(suction_lamp_1, bitRead(in, 0));
+
+        motor_X_pick.move(pick_x_steps_to_trash);
+    }
 }
