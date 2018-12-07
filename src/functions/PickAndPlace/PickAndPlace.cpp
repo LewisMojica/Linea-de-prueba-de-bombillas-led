@@ -6,6 +6,8 @@ extern A4988 motor_X_pick;
 extern A4988 motor_Y_pick;
 extern bool stopit;
 bool is_pushed =  false;
+byte carry_lamp;
+unsigned long pos_x,pos_y;
 
 void goToHome(){
     delay(1000);
@@ -42,4 +44,29 @@ void pushLamp(bool action){
 
 bool isLampPushed(){
     return is_pushed;
+}
+
+void moveTo(unsigned long x, unsigned long y){
+    moveXTo(x);
+    moveYTo(y);
+}
+void moveXTo(unsigned long x){
+    motor_X_pick.move(x - pos_x);
+    pos_x = x;
+}
+
+void moveYTo(unsigned long y){
+    motor_Y_pick.move(y - pos_y);
+    pos_y = y;
+}
+
+void goTo(unsigned long x, unsigned long y){
+    if(x > secure_pos_x){
+        moveXTo(secure_pos_x);
+        moveYTo(y);
+        moveXTo(x);
+    }
+    else{
+        moveTo(x,y);
+    }
 }
