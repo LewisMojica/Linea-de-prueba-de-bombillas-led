@@ -5,3 +5,4 @@
 void pushLamp(bool);
 void goToHome();
 bool isLampPushed();
+long tryLimit();
