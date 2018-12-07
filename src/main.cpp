@@ -33,6 +33,7 @@ void setup() {
   pinMode(suction_lamp_0, OUTPUT);
   pinMode(suction_lamp_1, OUTPUT);
 
+  motor_conveyor.begin(conveyor_RPM);
   motor_X_pick.begin(50);
   motor_Y_pick.begin(50);
   goToHome();
