@@ -61,10 +61,10 @@ void moveYTo(unsigned long y){
 }
 
 void goTo(unsigned long x, unsigned long y){
-    if(x > secure_pos_x){
-        moveXTo(secure_pos_x);
-        moveYTo(y);
+    if(x > secure_pos_y){
+        moveYTo(secure_pos_y);
         moveXTo(x);
+        moveYTo(y);
     }
     else{
         moveTo(x,y);

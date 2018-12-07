@@ -22,7 +22,7 @@
         #define pick_and_place_X_calibration_steps (180 * pick_and_place_X_uStepping)
         // #define pick_and_place_X_test_pos (180 * pick_and_place_X_uStepping)
 
-        #define secure_pos_x (100 * pick_and_place_X_uStepping)
+        
 
         // Y AXIS
         #define pick_y_steps_to_trash (1000 * pick_and_place_X_uStepping)
@@ -39,6 +39,8 @@
         
         #define pick_and_place_Y_calibration_steps (920 * pick_and_place_Y_uStepping)
         #define pick_and_place_Y_test_pos (180 * pick_and_place_Y_uStepping)
+
+        #define secure_pos_y (100 * pick_and_place_X_uStepping)
 
 
 ///// OBSTACLE SENSOR INPUTS PINS//////
