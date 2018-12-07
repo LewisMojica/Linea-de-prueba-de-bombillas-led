@@ -33,9 +33,6 @@ void pushLamp(bool action){
     goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_test_pos);
 }
 
-bool isLampPushed(){
-    return is_pushed;
-}
 
 void moveTo(unsigned long x, unsigned long y){
     moveXTo(x);
