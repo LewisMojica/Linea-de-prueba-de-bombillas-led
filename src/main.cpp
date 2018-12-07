@@ -7,10 +7,10 @@
 #include "Display/Display.h"
 #define MOTOR_ACCEL 4000
 #define MOTOR_DECEL 1000
-// #include <Wire.h> 
-// #include <LiquidCrystal_I2C.h>
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 
-// LiquidCrystal_I2C lcd(0x3F,20,4);
+LiquidCrystal_I2C lcd(0x3F,20,4);
 //conveyor
 A4988 motor_conveyor(conveyor_steps,9,conveyor_pin_STEP);
 
@@ -23,20 +23,21 @@ A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_
 
 void setup() {
   welcomeScreen();
-
+  Serial.begin(19200);
   pinMode(limit_switch_x, INPUT_PULLUP);
   pinMode(limit_switch_y,INPUT_PULLUP);
   pinMode(obstacle_sensor_lamp0, INPUT);
   pinMode(obstacle_sensor_lamp1, INPUT);
   pinMode(obstacle_sensor_end, INPUT);
+  pinMode(suction_lamp_0, OUTPUT);
+  pinMode(suction_lamp_1, OUTPUT);
 
-  motor_X_pick.begin(1);
-  motor_Y_pick.begin(1);
-  
+  motor_X_pick.begin(50);
+  motor_Y_pick.begin(50);
   goToHome();
-  
 }
 
 void loop() {
-  
+  nextItem();
+  moveToTrash(lampState());
 }
