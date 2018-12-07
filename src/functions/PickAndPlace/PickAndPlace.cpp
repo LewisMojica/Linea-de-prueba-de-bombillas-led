@@ -30,16 +30,7 @@ void goToHome(){
 }
 
 void pushLamp(bool action){
-    
-    if (action && !is_pushed)
-    {
-        motor_Y_pick.move(-pick_and_place_Y_test_pos);
-        is_pushed = true;
-    }
-    if(!action && is_pushed){
-        motor_Y_pick.move(pick_and_place_Y_test_pos);
-        is_pushed = false;
-    }
+    goTo(pick_and_place_X_calibration_steps, pick_and_place_Y_test_pos);
 }
 
 bool isLampPushed(){
