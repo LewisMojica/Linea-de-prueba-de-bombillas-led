@@ -41,6 +41,7 @@
         #define pick_and_place_Y_test_pos (180 * pick_and_place_Y_uStepping)
 
         #define secure_pos_y (150 * pick_and_place_X_uStepping)
+        #define pick_and_place_Y_push_pos (1000 * pick_and_place_Y_uStepping)
 
 
 ///// OBSTACLE SENSOR INPUTS PINS//////

@@ -37,23 +37,12 @@ void setup() {
   motor_Y_pick.begin(50);
   goToHome();
   goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos);
-
-  // delay(1000);
-  // goTo(180 * 16,0);
-  // delay(1000);
-  // goTo(180 *16,pick_and_place_Y_test_pos);
-  // delay(1000);
-  // goTo(180 * 16, pick_and_place_Y_test_pos + 500);
-  // delay(1000);
-  // goTo(500 * 16, pick_and_place_Y_test_pos + 500);
-  // goTo(pick_x_steps_to_trash, 500 * 16);
-  // goTo(0, pos_y);
-
+  delay(1000);
+  pushLamp(true);
+  delay(1000);
   moveToTrash(2);
 
-  // goTo(250 * 16, pos_y);
-
-
+standByScreen();
 
 }
 
