@@ -3,6 +3,7 @@
         #define conveyor_steps 200
         #define conveyor_pin_DIR 48
         #define conveyor_pin_STEP 14
+        #define conveyor_RPM 100
 
     // PICK AND PLACE
         // X AXIS
