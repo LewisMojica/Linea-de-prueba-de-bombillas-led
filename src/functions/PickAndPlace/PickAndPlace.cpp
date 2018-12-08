@@ -45,13 +45,26 @@ void moveYTo(unsigned long y){
 }
 
 void goTo(unsigned long x, unsigned long y){
-    if(y > secure_pos_y && x != pos_x){
-        moveYTo(secure_pos_y);
-        moveXTo(x);
-        moveYTo(y);
+    if(digitalRead(suction_lamp_0) || digitalRead(suction_lamp_1)){
+        if(y > secure_pos_y && x != pos_x){
+            moveYTo(secure_pos_y);
+            moveXTo(x);
+            moveYTo(y);
+        }
+        else{
+            moveXTo(x);
+            moveYTo(y);
+        }
     }
-    else{
-        moveXTo(x);
-        moveYTo(y);
+    else {
+        if(y > pick_and_place_Y_normal_pos && x != pos_x){
+            moveYTo(pick_and_place_Y_normal_pos);
+            moveXTo(x);
+            moveYTo(y);
+        }
+        else{
+            moveXTo(x);
+            moveYTo(y);
+        }
     }
 }
