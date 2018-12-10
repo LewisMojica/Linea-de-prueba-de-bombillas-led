@@ -5,12 +5,12 @@
 #include "functions/Conveyor/Conveyor.h"
 #include "functions/PickAndPlace/PickAndPlace.h"
 #include "Display/Display.h"
-#define MOTOR_ACCEL 4000
-#define MOTOR_DECEL 1000
+// #define MOTOR_ACCEL 4000
+// #define MOTOR_DECEL 1000
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x3F,20,4);
+// LiquidCrystal_I2C lcd(0x3F,20,4);
 //conveyor
 A4988 motor_conveyor(conveyor_steps,9,conveyor_pin_STEP);
 
@@ -23,7 +23,7 @@ A4988 motor_Y_pick(pick_and_place_Y_steps  ,  pick_and_place_Y_pin_DIR  ,  pick_
 extern unsigned long pos_x,pos_y;
 
 void setup() {
-  welcomeScreen();
+  // welcomeScreen();
   Serial.begin(19200);
   pinMode(limit_switch_x, INPUT_PULLUP);
   pinMode(limit_switch_y,INPUT_PULLUP);
@@ -36,17 +36,37 @@ void setup() {
   motor_conveyor.begin(conveyor_RPM);
   motor_X_pick.begin(50);
   motor_Y_pick.begin(50);
-  goToHome();
-  goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos);
-  delay(1000);
-  pushLamp();
-  delay(1000);
-  moveToTrash(2);
+//   goToHome();
+//   goTo(pick_and_place_X_normal_pos, pick_and_place_Y_normal_pos);
+//   delay(1000);
+//   pushLamp();
+//   delay(1000);
+//   moveToTrash(2);
 
-standByScreen();
-
+// standByScreen();
+// delay(1000);
+//   nextItem();
+//   delay(1000);
+// unsigned long stp = 0;
+// while(!digitalRead(obstacle_sensor_lamp1)){
+//   motor_conveyor.move(10);
+// }
+// delay(1000);
+// while(!digitalRead(obstacle_sensor_lamp0)){
+//   motor_conveyor.move(10);
+//   stp += 10;
+// }
+// Serial.println(stp);
+// while()
 }
 
 void loop() {
-  
+
+
+  // while(!digitalRead(obstacle_sensor_lamp1) || digitalRead(obstacle_sensor_lamp0)){
+  //   motor_conveyor.move(10);
+  // }
+  // nextItem();
+nextItem();
+delay(1000);
 }

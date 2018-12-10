@@ -1,9 +1,9 @@
 //////// STEPPER MOTORS CONFIG ////////
     // CONVEYOR
-        #define conveyor_steps 200
+        #define conveyor_steps (200 * 8)
         #define conveyor_pin_DIR 48
-        #define conveyor_pin_STEP 14
-        #define conveyor_RPM 100
+        #define conveyor_pin_STEP 12
+        #define conveyor_RPM (20)
 
     // PICK AND PLACE
         // X AXIS
@@ -46,8 +46,8 @@
 
 
 ///// OBSTACLE SENSOR INPUTS PINS//////
-    #define obstacle_sensor_lamp0 17
-    #define obstacle_sensor_lamp1 17
+    #define obstacle_sensor_lamp0 10
+    #define obstacle_sensor_lamp1 8
     #define obstacle_sensor_end 15
 
 
