@@ -26,3 +26,10 @@ void standByScreen(){
     lcd.setCursor(0,2);
     lcd.print("  PROCESO DE PRUEBA");
 }
+
+void workingScree(){
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print(" EN OPERACION");  
+    lcd.setCursor(0,1);
+}

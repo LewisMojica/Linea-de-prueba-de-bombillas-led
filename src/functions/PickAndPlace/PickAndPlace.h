@@ -12,3 +12,4 @@ void moveTo(unsigned long x, unsigned long y);
 void moveXTo(unsigned long x);
 void moveYTo(unsigned long y);
 void goTo(unsigned long, unsigned long);
+void unpushLamp();

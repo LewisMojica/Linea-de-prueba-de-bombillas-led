@@ -3,4 +3,5 @@
 
 void welcomeScreen();
 void standByScreen();
+void workingScree();
 extern LiquidCrystal_I2C lcd;
